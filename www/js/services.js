@@ -83,6 +83,12 @@ angular.module('starter.services', [])
     location: 'Amsterdam (0,9 km)',
     type: 'Brass',
     thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg'
+  }, {
+    id: 5,
+    name: 'Westewind',
+    location: 'Amsterdam (1,1 km)',
+    type: 'Bistro / Europees / Frans',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/3161/0299cad4-ad1b-4b6d-9055-9f402fc0fa03.jpg'
   }];
 
   return {
