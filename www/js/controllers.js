@@ -5,6 +5,10 @@ angular.module('starter.controllers', [])
 .controller('ListCtrl', function($scope, Restaurants) {
   $scope.restaurants = Restaurants.all();
 })
+.controller('ListDetailCtrl', function($scope, $stateParams, Restaurants) {
+  $scope.restaurant = Restaurants.get($stateParams.listId);
+})
+
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();

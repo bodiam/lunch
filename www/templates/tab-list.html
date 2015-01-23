@@ -3,7 +3,7 @@
   <ion-content class="padding">
 
     <ion-list>
-      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="restaurant in restaurants" type="item-text-wrap" href="#/tab/restaurant/{{restaurant.id}}">
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="restaurant in restaurants" type="item-text-wrap" href="#/tab/list/{{restaurant.id}}">
         <img ng-src="{{restaurant.thumbnail}}">
         <h2>{{restaurant.name}}</h2>
         <p>{{restaurant.location}}</p>

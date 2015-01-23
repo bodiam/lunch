@@ -57,6 +57,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.list-detail', {
+    url: '/list/:listId',
+    views: {
+      'tab-chats': {
+        templateUrl: 'templates/list-detail.html',
+        controller: 'ListDetailCtrl'
+      }
+    }
+  })
+
 
   .state('tab.chats', {
       url: '/chats',
