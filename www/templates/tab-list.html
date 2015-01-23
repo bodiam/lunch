@@ -1,0 +1,16 @@
+<ion-view view-title="List">
+
+  <ion-content class="padding">
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="restaurant in restaurants" type="item-text-wrap" href="#/tab/restaurant/{{restaurant.id}}">
+        <img ng-src="{{restaurant.thumbnail}}">
+        <h2>{{restaurant.name}}</h2>
+        <p>{{restaurant.location}}</p>
+        <p>{{restaurant.type}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
