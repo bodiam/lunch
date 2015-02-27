@@ -1,0 +1,5 @@
+= Resource list
+
+== Android style tabs
+
+http://forum.ionicframework.com/t/android-style-tab-support/5273

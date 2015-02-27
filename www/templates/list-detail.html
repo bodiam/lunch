@@ -4,23 +4,42 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{restaurant.name}}">
+<ion-view view-title="{{restaurant.name}}" class="">
 
 
 
-  <ion-content class="padding" ng-controller="MapController">
 
-    <p> list..... id : {{restaurant.id}}
-      {{restaurant.type}}
-    </p>
-    <br /><br />
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+        <div class="tabs">
+            <a class="tab-item tab-item-active detail-tab-item" >
+                Info
+            </a>
+            <a class="tab-item detail-tab-item">
+                Reviews
+            </a>
+            <a class="tab-item detail-tab-item">
+                Menu
+            </a>
+            <a class="tab-item detail-tab-item">
+                Locatie
+            </a>
+        </div>
+    </div>
+
+    <ion-content class="padding" ng-controller="MapController">
+
+        <p> list..... id : {{restaurant.id}}
+            {{restaurant.type}}
+        </p>
+        <br/><br/>
 
 
-    <div id="map" data-tap-disabled="true"></div>
+        <div id="map" data-tap-disabled="true"></div>
 
-    <img ng-src="{{restaurant.thumbnail}}" style="width: 64px; height: 64px">
-    <p> list..... id : {{restaurant.id}}
-      {{restaurant.type}}
-    </p>
-  </ion-content>
+        <img ng-src="{{restaurant.thumbnail}}" style="width: 64px; height: 64px">
+
+        <p> list..... id : {{restaurant.id}}
+            {{restaurant.type}}
+        </p>
+    </ion-content>
 </ion-view>

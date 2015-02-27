@@ -8,3 +8,16 @@
     width: 100%;
     height: 50%;
 }
+
+.detail-tab-item {
+    text-transform: uppercase;
+}
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    border-bottom: 5px solid #d70f18 !important;
+}
+
+.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
+    line-height: 12px !important;
+    height: 48px !important;
+}
