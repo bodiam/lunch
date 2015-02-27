@@ -3,7 +3,12 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 
 .controller('ListCtrl', function($scope, $ionicModal, Restaurants) {
+
   $scope.restaurants = Restaurants.all();
+
+  $scope.clearSearch = function() {
+    $scope.restaurants.searchQuery = '';
+  };
 
   $ionicModal.fromTemplateUrl('templates/modal-filter.html', {
       scope: $scope,
@@ -19,10 +24,6 @@ angular.module('starter.controllers', [])
     };
     $scope.$on('$destroy', function() {
       $scope.modal.remove();
-    });
-    $scope.$on('modal.hidden', function() {
-    });
-    $scope.$on('modal.removed', function() {
     });
 
 })

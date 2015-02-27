@@ -6,6 +6,59 @@
         </div>
     </ion-header-bar>
     <ion-content>
-        Some content
+
+        <div class="list list-inset filter">
+            <h5>Filter</h5>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Distance
+                </div>
+                <select>
+                    <option selected>< 1 km</option>
+                    <option>2 - 5 km</option>
+                    <option>5 - 10 km</option>
+                    <option>> 10km</option>
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    City
+                </div>
+                <select>
+                    <option selected>Amsterdam</option>
+                    <option>Utrecht</option>
+                    <option>etc.</option>
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Cuisine
+                </div>
+                <select>
+                    <option selected>French</option>
+                    <option>Italian</option>
+                    <option>etc.</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="list list-inset filter">
+            <h5>Sort</h5>
+            <label class="item item-radio">
+                <input type="radio" name="group">
+                <div class="item-content">
+                    Distance
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <label class="item item-radio">
+                <input type="radio" name="group">
+                <div class="item-content">
+                    Rating
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+        </div>
+
     </ion-content>
 </ion-modal-view>
