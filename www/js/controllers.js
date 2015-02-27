@@ -2,13 +2,34 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('ListCtrl', function($scope, Restaurants) {
+.controller('ListCtrl', function($scope, $ionicModal, Restaurants) {
   $scope.restaurants = Restaurants.all();
+
+  $ionicModal.fromTemplateUrl('templates/modal-filter.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.openModal = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    $scope.$on('modal.hidden', function() {
+    });
+    $scope.$on('modal.removed', function() {
+    });
+
 })
+
 .controller('ListDetailCtrl', function($scope, $stateParams, Restaurants) {
   $scope.restaurant = Restaurants.get($stateParams.listId);
 })
-
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
@@ -93,4 +114,3 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
-
