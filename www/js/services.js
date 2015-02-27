@@ -58,37 +58,43 @@ angular.module('starter.services', [])
     name: 'Grandcafe Lokaal',
     location: 'Amsterdam (0,2 km)',
     type: 'Bbq/grill, Internationaal',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg'
+    thumbnail: 'http://couverts.nl/media/foto/280x280/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg',
+    rating: '6.8'
   }, {
     id: 1,
     name: 'CtheCity',
     location: 'Amsterdam (0,6 km)',
     type: 'Hollands',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1988/030be71e-734c-49c5-a794-adc7ef7c3156.jpg'
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1988/030be71e-734c-49c5-a794-adc7ef7c3156.jpg',
+    rating: '7.5'
   }, {
     id: 2,
     name: 'Ctaste, dineren in het donker',
     location: 'Amsterdam (0,6 km)',
     type: 'Internationaal',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/185/9763b0a8-c72c-436c-885a-2ff3a0ca16c9.jpg'
+    thumbnail: 'http://couverts.nl/media/foto/280x280/185/9763b0a8-c72c-436c-885a-2ff3a0ca16c9.jpg',
+    rating: '8.2'
   }, {
     id: 3,
     name: 'Bistro Zuid',
     location: 'Amsterdam (0,8 km)',
     type: 'Bistro',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1972/9aa061dc-c679-4483-a2a2-597065273b65.jpg'
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1972/9aa061dc-c679-4483-a2a2-597065273b65.jpg',
+    rating: '4.3'
   }, {
     id: 4,
     name: 'Hotel Notting Hill',
     location: 'Amsterdam (0,9 km)',
     type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg'
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
   }, {
     id: 5,
     name: 'Westewind',
     location: 'Amsterdam (1,1 km)',
     type: 'Bistro / Europees / Frans',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/3161/0299cad4-ad1b-4b6d-9055-9f402fc0fa03.jpg'
+    thumbnail: 'http://couverts.nl/media/foto/280x280/3161/0299cad4-ad1b-4b6d-9055-9f402fc0fa03.jpg',
+    rating: '6.8'
   }];
 
   return {
