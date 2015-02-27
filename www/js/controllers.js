@@ -52,6 +52,8 @@ angular.module('starter.controllers', [])
 
 .controller('MapController', function($scope, $ionicLoading) {
 
+      $scope.myActiveSlide = 0;
+
       $scope.initialise = function() {
         console.log("In Google.maps.event.addDomListener");
         var myLatlng = new google.maps.LatLng(37.3000, -120.4833);

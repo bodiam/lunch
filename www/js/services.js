@@ -59,6 +59,14 @@ angular.module('starter.services', [])
     location: 'Amsterdam (0,2 km)',
     type: 'Bbq/grill, Internationaal',
     thumbnail: 'http://couverts.nl/media/foto/280x280/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg',
+    carousel: [
+        "http://www.couverts.nl/media/foto/550x310/3088/cbed57f1-330b-43f3-b1f8-9ae2b65586b9.jpg",
+        "http://www.couverts.nl/media/foto/550x310/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg",
+        "http://www.couverts.nl/media/foto/550x310/3088/50e2b29a-25bf-4789-9d0f-e7198acb4073.jpg",
+        "http://www.couverts.nl/media/foto/550x310/3088/94c9d1a5-cbbd-4993-b519-b02ac2cc3c7c.jpg",
+        "http://www.couverts.nl/media/foto/550x310/3088/ac913f2b-edd4-454b-8458-f750bd35c3b8.jpg",
+        "http://www.couverts.nl/media/foto/550x310/3088/13468cb4-b276-4f32-ad31-a337d1a9e915.jpg"
+    ],
     rating: '6.8'
   }, {
     id: 1,

@@ -21,3 +21,33 @@
     line-height: 12px !important;
     height: 48px !important;
 }
+
+.slider {
+    height: 200px;
+    margin-bottom: 10px;
+    /*border: 1px solid red;*/
+}
+.slider-slide {
+    padding-top: 0px;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+
+    /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+    /*font-weight: 300;*/
+}
+.slider-pager-page {
+    padding-top: 10px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.pink {
+    background-color: pink;
+}
