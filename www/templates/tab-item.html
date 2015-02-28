@@ -1,0 +1,58 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+
+
+  <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+    <ion-tab title="Info" icon-off="ion-ios7-pulse" icon-on="ion-ios7-pulse-strong" href="#/tab-item/info">
+
+        <!-- Call navigation view <ion-nav-view name="tab-item-detail"></ion-nav-view> -->
+
+        <ion-content class="padding" ng-controller="MapController">
+
+          <p> list..... id : {{restaurant.id}}
+              {{restaurant.type}}
+          </p>
+          <br/><br/>
+
+          <ion-slide-box active-slide="myActiveSlide">
+              <ion-slide ng-repeat="image in restaurant.carousel">
+                  <div class="box"><img src="{{image}}" style="height: 170px"></div>
+              </ion-slide>
+          </ion-slide-box>
+
+
+
+
+          <br /><br /><br /><br /><br /><br /><br />
+          <div id="map" data-tap-disabled="true"></div>
+
+          <img ng-src="{{restaurant.thumbnail}}" style="width: 64px; height: 64px">
+
+          <p> list..... id : {{restaurant.id}}
+              {{restaurant.type}}
+          </p>
+      </ion-content>
+
+    </ion-tab>
+
+    <ion-tab title="Reviews" icon-off="ion-ios-wineglass-outline" icon-on="ion-ios-wineglass" href="#/tab-item/reviews">
+      
+          <ion-content class="padding">
+          BLALALA
+
+              <img ng-src="{{restaurant.thumbnail}}" style="width: 64px; height: 64px">
+
+              <p> list..... id : {{restaurant.id}}
+                  {{restaurant.type}}
+              </p>
+          </ion-content>
+          
+    </ion-tab>
+
+  </ion-tabs>
+

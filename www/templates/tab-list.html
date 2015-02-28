@@ -16,7 +16,9 @@
   <ion-content class="padding">
 
     <ion-list>
-      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="restaurant in restaurants | filter: restaurants.searchQuery" type="item-text-wrap" href="#/tab/list/{{restaurant.id}}">
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="restaurant in restaurants | filter: restaurants.searchQuery"
+        type="item-text-wrap" href="#/tab/list/{{restaurant.id}}">
+        <!-- type="item-text-wrap" href="#/tab-item/{{restaurant.id}}"> -->
         <img ng-src="{{restaurant.thumbnail}}">
         <h2>{{restaurant.name}}</h2>
         <p>{{restaurant.location}}</p>
