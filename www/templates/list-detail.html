@@ -25,10 +25,7 @@
 
     <ion-content class="padding" ng-controller="MapController">
 
-        <p> list..... id : {{restaurant.id}}
-            {{restaurant.type}}
-        </p>
-        <br/><br/>
+        <br/><br/><br/>
 
         <ion-slide-box active-slide="myActiveSlide">
             <ion-slide ng-repeat="image in restaurant.carousel">
@@ -36,8 +33,33 @@
             </ion-slide>
         </ion-slide-box>
 
+        <hr class="style-two">
 
+        <h5>{{restaurant.name}}</h5>
 
+        <div class="center">
+            <p>
+                <span class="ion-location"> {{restaurant.address}}</span><br/>
+                <span class="ion-fork"> {{restaurant.type}}</span>
+            </p>
+
+            <p>
+                <span class="ion-ios-people"> 0 vrienden vinden dit een hotspot</span><br/>
+                <span class="ion-heart"> 0x gemarkeerd als hotspot</span>
+            </p>
+        </div>
+
+        <hr class="style-two">
+        <h5>Waarderingen</h5>
+        <p>
+            Service:
+            Prijs / kwaliteit:
+            Sfeer:
+        </p>
+
+        <hr class="style-two">
+        <h5>Omschrijving</h5>
+        <p ng-bind-html="restaurant.description"></p>
 
         <br /><br /><br /><br /><br /><br /><br />
         <div id="map" data-tap-disabled="true"></div>
