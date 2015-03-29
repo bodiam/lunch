@@ -9,10 +9,17 @@ angular.module('starter.controllers', [])
   $scope.clearSearch = function() {
 
 	console.log("clearing search query text");
-	
-	// Clear the search text
-	$scope.restaurants.searchQuery = '';
 
+	// Some logging
+	for (var key in $scope.searchSettings) {
+		if ($scope.searchSettings.hasOwnProperty(key)) {
+			var value = $scope.searchSettings[key];
+			console.log("key = " + key + ", value = " + value);
+		}
+	}
+
+	$scope.searchSettings.$ = "";
+	console.log("Done clearing search query text");
   };
 
   // Set up defaults for settings
