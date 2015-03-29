@@ -8,13 +8,15 @@ angular.module('starter.controllers', [])
 
   $scope.clearSearch = function() {
 
+	// Clear the search text
 	$scope.restaurants.searchQuery = '';
 
   };
 
   // Set up defaults for settings
   $scope.searchSettings = [];
-  $scope.searchSettings.cuisine = "";
+//  $scope.searchSettings.cuisine = "";
+//  $scope.searchSettings.city = "";
   
   $ionicModal.fromTemplateUrl('templates/modal-filter.html', {
       scope: $scope,

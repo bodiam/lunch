@@ -18,7 +18,7 @@
                     Distance
                 </div>
                 <select>
-                    <option selected>< 1 km</option>
+                    <option>< 1 km</option>
                     <option>2 - 5 km</option>
                     <option>5 - 10 km</option>
                     <option>> 10km</option>
@@ -28,10 +28,12 @@
                 <div class="input-label">
                     City
                 </div>
-                <select>
-                    <option selected>Amsterdam</option>
+                <select ng-model="searchSettings.location">
+                    <option></option>
+                    <option>Amsterdam</option>
+                    <option>Eindhoven</option>
+                    <option>Rotterdam</option>
                     <option>Utrecht</option>
-                    <option>etc.</option>
                 </select>
             </label>
             <label class="item item-input item-select">
@@ -39,9 +41,11 @@
                     Cuisine
                 </div>
                 <select ng-model="searchSettings.cuisine">
-                    <option selected>French</option>
+                    <option></option>
+                    <option>Belgian</option>
+                    <option>French</option>
                     <option>Italian</option>
-                    <option>etc.</option>
+                    <option>Portuguese</option>
                 </select>
             </label>
 		

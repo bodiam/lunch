@@ -139,7 +139,7 @@ angular.module('starter.services', [])
   }, {
     id: 3,
     name: 'Bistro Zuid',
-    location: 'Amsterdam ',
+    location: 'Rotterdam ',
     address: 'Van Woustraat 97',
     type: 'Bistro',
     cuisine: 'Italian',
@@ -148,7 +148,7 @@ angular.module('starter.services', [])
   }, {
     id: 4,
     name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
+    location: 'Eindhoven',
     address: 'Westeinde 26',
     type: 'Brass',
     thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
