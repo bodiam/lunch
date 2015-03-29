@@ -73,7 +73,33 @@ angular.module('starter.services', [])
         "http://www.couverts.nl/media/foto/550x310/3088/ac913f2b-edd4-454b-8458-f750bd35c3b8.jpg",
         "http://www.couverts.nl/media/foto/550x310/3088/13468cb4-b276-4f32-ad31-a337d1a9e915.jpg"
     ],
-    rating: '6.8'
+    rating: '6.8',
+    menu: {
+      pdfLink: "sdfsdfsdfs",
+      courses: [
+        {
+          name: "Voorgerechten",
+          items: [
+            {name: "Oosterse kip", price: 7.00},
+            {name: "Noorse zalm", price: 8.00},
+            {name: "Geitenkaas", price: 7.50}
+          ]
+        }, {
+          name: "Hoofdgerechten",
+          items: [
+            {name: "Kalfsentrecote", price: 13.00},
+            {name: "Tagliatelle", price: 11.50},
+            {name: "Vegetarische lasagna", price: 13.50}
+          ]
+        }, {
+          name: "Nagerechten",
+          items: [
+            {name: "Cheescake met vanille ijs", price: 6.00},
+            {name: "Chocoladetaart met vanille ijs", price: 6.00}
+          ]
+        }
+      ]
+    }
   }, {
     id: 1,
     name: 'CtheCity',
@@ -86,7 +112,20 @@ angular.module('starter.services', [])
     address: 'Amsteldijk 55',
     type: 'Hollands',
     thumbnail: 'http://couverts.nl/media/foto/280x280/1988/030be71e-734c-49c5-a794-adc7ef7c3156.jpg',
-    rating: '7.5'
+    rating: '7.5',
+    menu: {
+      pdfLink: "dsgfsdgsd",
+      courses: [
+        {
+          name: "Voorgerechten",
+          items: [
+            {name: "Oosterse kip", price: 7.00},
+            {name: "Noorse zalm", price: 8.00},
+            {name: "Geitenkaas", price: 7.50}
+          ]
+        }
+      ]
+    }
   }, {
     id: 2,
     name: 'Ctaste, dineren in het donker',

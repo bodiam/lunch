@@ -84,12 +84,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.menu', {
-    url: '/list/:listId/menu',
+
+  // Tab Items
+  .state('tab-item.tab-item-detail', {
+    url: '/:listId',
     views: {
       'tab-item': {
-        templateUrl: 'templates/menu.html',
-        controller: 'ListCtrl'
+        templateUrl: 'templates/tab-item-detail.html',
+        controller: 'ListDetailCtrl'
       }
     }
   })

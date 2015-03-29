@@ -1,6 +1,56 @@
-<h1>safasfasdf</h1>
-<h1>safasfasdf</h1>
-<h1>safasfasdf</h1>
-<h1>safasfasdf</h1>
-<h1>safasfasdf</h1>
-<h1>safasfasdf</h1>
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{restaurant.name}}" class="">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+        <div class="tabs">
+            <a class="tab-item tab-item-active detail-tab-item" >
+                Info
+            </a>
+            <a class="tab-item detail-tab-item">
+                Reviews
+            </a>
+            <a class="tab-item detail-tab-item">
+                Menu
+            </a>
+            <a class="tab-item detail-tab-item">
+                Locatie
+            </a>
+        </div>
+    </div>
+
+    <ion-content class="padding">
+<br/>
+<br/>
+<br/>
+<br/>
+        <h1>{{restaurant.name}}</h1>
+
+        <div class="center">
+            <p>
+                Je kunt de complete menu-kaart als PDF downloaden door hiernaast op het icoon te klikken
+                <h1><a href="{{ restaurant.menu.pdfLink }}" class="ion-document-text"></a></h1>
+            </p>
+        </div>
+
+        <div class="list">
+
+            <div ng-repeat="course in restaurant.menu.courses">
+                <div class="item item-divider">
+                    {{course.name}}
+                </div>
+
+                <a class="item" href="#" ng-repeat="item in course.items">
+                    {{item.name}} - {{ item.price | currency }}
+                </a>
+            </div>
+
+        </div>
+
+
+    </ion-content>
+</ion-view>
