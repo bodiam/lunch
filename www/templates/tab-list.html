@@ -4,7 +4,7 @@
         <div id="search-box" class="bar bar-header item-input-inset">
             <div class="item-input-wrapper">
                 <i class="icon ion-ios7-search placeholder-icon"></i>
-                <input type="search" placeholder="Search" ng-model="restaurants.searchQuery">
+                <input type="search" placeholder="Search" ng-model="searchSettings.$">
                 <i class="clear-search icon ion-ios7-close-empty" ng-click="clearSearch()"></i>
             </div>
         </div>
@@ -16,7 +16,7 @@
   <ion-content class="padding">
 
     <ion-list>
-      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="restaurant in restaurants | filter: restaurants.searchQuery"
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="restaurant in restaurants | filter:searchSettings"
         type="item-text-wrap" href="#/restaurant/{{restaurant.id}}">
         <img ng-src="{{restaurant.thumbnail}}">
         <h2>{{restaurant.name}}</h2>

@@ -7,9 +7,15 @@ angular.module('starter.controllers', [])
   $scope.restaurants = Restaurants.all();
 
   $scope.clearSearch = function() {
-    $scope.restaurants.searchQuery = '';
+    // FIXME: remove $scope.restaurants.searchQuery = '';
+	$scope.restaurants.searchQuery = '';
+	// FIXME: something like this? $scope.searchSettings = '';
   };
 
+  // Set up defaults for settings
+  $scope.searchSettings = [];
+  $scope.searchSettings.cuisine = "French";
+  
   $ionicModal.fromTemplateUrl('templates/modal-filter.html', {
       scope: $scope,
       animation: 'slide-in-up'
@@ -27,6 +33,7 @@ angular.module('starter.controllers', [])
     });
 
 })
+
 
 .controller('ListDetailCtrl', function($scope, $stateParams, Restaurants) {
   $scope.restaurant = Restaurants.get($stateParams.listId);

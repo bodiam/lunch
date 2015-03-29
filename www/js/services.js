@@ -64,6 +64,7 @@ angular.module('starter.services', [])
     location: 'Amsterdam',
     address: 'Wibautstraat 85',
     type: 'Bbq/grill, Internationaal',
+    cuisine: 'French',
     thumbnail: 'http://couverts.nl/media/foto/280x280/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg',
     carousel: [
         "http://www.couverts.nl/media/foto/550x310/3088/cbed57f1-330b-43f3-b1f8-9ae2b65586b9.jpg",
@@ -132,6 +133,7 @@ angular.module('starter.services', [])
     location: 'Amsterdam',
     address: 'Amsteldijk 55',
     type: 'Internationaal',
+    cuisine: 'French',
     thumbnail: 'http://couverts.nl/media/foto/280x280/185/9763b0a8-c72c-436c-885a-2ff3a0ca16c9.jpg',
     rating: '8.2'
   }, {
@@ -140,6 +142,7 @@ angular.module('starter.services', [])
     location: 'Amsterdam ',
     address: 'Van Woustraat 97',
     type: 'Bistro',
+    cuisine: 'Italian',
     thumbnail: 'http://couverts.nl/media/foto/280x280/1972/9aa061dc-c679-4483-a2a2-597065273b65.jpg',
     rating: '4.3'
   }, {

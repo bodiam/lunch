@@ -1,14 +1,18 @@
 <ion-modal-view>
     <ion-header-bar class="bar-positive">
         <h1 class="title">Filter</h1>
+		<!-- Selected changes are applied immediately -->
         <div class="buttons">
             <button class="button button-clear" ng-click="closeModal()">Close</button>
         </div>
     </ion-header-bar>
     <ion-content>
 
+	  <form ng-submit="updateSearchSettings(searchSettings)">
+	  
         <div class="list list-inset filter">
-            <h5>Filter</h5>
+
+			<h5>Filter</h5>
             <label class="item item-input item-select">
                 <div class="input-label">
                     Distance
@@ -34,12 +38,13 @@
                 <div class="input-label">
                     Cuisine
                 </div>
-                <select>
+                <select ng-model="searchSettings.cuisine">
                     <option selected>French</option>
                     <option>Italian</option>
                     <option>etc.</option>
                 </select>
             </label>
+		
         </div>
 
         <div class="list list-inset filter">
@@ -60,5 +65,7 @@
             </label>
         </div>
 
+	  </form>
+	  
     </ion-content>
 </ion-modal-view>
