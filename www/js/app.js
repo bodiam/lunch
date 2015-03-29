@@ -36,12 +36,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: "templates/tabs.html"
   })
 
-  .state('tab-item', {
-    url: "/tab-item",
-    abstract: true,
-    templateUrl: "templates/tab-item.html"
+  .state('restaurant', {
+	  url: "/restaurant",
+	  abstract: true,
+	  templateUrl: "templates/restaurant/tabs.html"
   })
-
+  
   // Each tab has its own nav history stack:
 
   .state('tab.dash', {
@@ -63,6 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+
   .state('tab.restaurant', {
     url: '/restaurant/:id/menu',
     views: {
@@ -72,23 +73,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+
   .state('tab.list-detail', {
     url: '/list/:listId',
     views: {
       'tab-list': {
         templateUrl: 'templates/list-detail.html',
-        controller: 'ListDetailCtrl'
-      }
-    }
-  })
-
-
-  // Tab Items
-  .state('tab-item.tab-item-detail', {
-    url: '/:listId',
-    views: {
-      'tab-item': {
-        templateUrl: 'templates/tab-item-detail.html',
         controller: 'ListDetailCtrl'
       }
     }
@@ -104,7 +94,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-
   .state('tab.chats', {
       url: '/chats',
       views: {
@@ -114,6 +103,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
@@ -143,6 +133,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+  .state('restaurant.restaurant-detail', {
+    url: '/:listId',
+    views: {
+      'restaurant-detail': {
+        templateUrl: 'templates/restaurant/detail.html',
+        controller: 'ListDetailCtrl'
+      }
+    }
+  })
+
+
+
   .state('tab.account', {
     url: '/account',
     views: {
@@ -153,6 +155,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/list');
 
