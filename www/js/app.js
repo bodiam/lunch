@@ -30,7 +30,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('restaurant', {
+  .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
@@ -44,7 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('restaurant.dash', {
+  .state('tab.dash', {
     url: '/dash',
     views: {
       'tab-dash': {
@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('restaurant.list', {
+  .state('tab.list', {
     url: '/list',
     views: {
       'tab-list': {
@@ -63,7 +63,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  .state('restaurant.list-detail', {
+  .state('tab.erik', {
+    url: '/list/:listId/menu',
+    views: {
+      'tab-list': {
+        templateUrl: 'templates/menu.html',
+        controller: 'ListCtrl'
+      }
+    }
+  })
+  .state('tab.list-detail', {
     url: '/list/:listId',
     views: {
       'tab-list': {
@@ -85,7 +94,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('restaurant.menu', {
+  .state('tab.menu', {
     url: '/list/:listId/menu',
     views: {
       'tab-item': {
@@ -96,7 +105,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
 
-  .state('restaurant.chats', {
+  .state('tab.chats', {
       url: '/chats',
       views: {
         'tab-chats': {
@@ -105,7 +114,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('restaurant.chat-detail', {
+    .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
@@ -115,7 +124,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('restaurant.friends', {
+  .state('tab.friends', {
       url: '/friends',
       views: {
         'tab-friends': {
@@ -124,7 +133,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('restaurant.friend-detail', {
+    .state('tab.friend-detail', {
       url: '/friend/:friendId',
       views: {
         'tab-friends': {
@@ -134,7 +143,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('restaurant.account', {
+  .state('tab.account', {
     url: '/account',
     views: {
       'tab-account': {
