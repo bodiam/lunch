@@ -39,7 +39,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('restaurant', {
 	  url: "/restaurant",
 	  abstract: true,
-	  templateUrl: "templates/restaurant/tabs.html"
+	  templateUrl: "templates/restaurant/tabs.html",
   })
   
   // Each tab has its own nav history stack:
@@ -64,15 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.restaurant', {
-    url: '/restaurant/:id/menu',
-    views: {
-      'tab-list': {
-        templateUrl: 'templates/restaurant/menu.html',
-        controller: 'RestaurantMenuCtrl'
-      }
-    }
-  })
+
 
   .state('tab.list-detail', {
     url: '/list/:listId',
@@ -135,12 +127,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+  // Restaurant pages
+
   .state('restaurant.restaurant-detail', {
     url: '/:listId',
     views: {
       'restaurant-detail': {
         templateUrl: 'templates/restaurant/detail.html',
-        controller: 'ListDetailCtrl'
+        controller: 'RestaurantCtrl'
+      }
+    }
+  })
+
+  .state('restaurant.restaurant-menu', {
+    url: '/:listId/menu',
+    views: {
+      'restaurant-menu': {
+        templateUrl: 'templates/restaurant/menu.html',
+        controller: 'RestaurantCtrl'
       }
     }
   })

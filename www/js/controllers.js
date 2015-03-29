@@ -32,8 +32,13 @@ angular.module('starter.controllers', [])
   $scope.restaurant = Restaurants.get($stateParams.listId);
 })
 
+
 .controller('RestaurantMenuCtrl', function($scope, $stateParams, Restaurants) {
   $scope.restaurant = Restaurants.get($stateParams.id);
+})
+
+.controller('RestaurantCtrl', function($scope, $stateParams, Restaurants) {
+  $scope.restaurant = Restaurants.get($stateParams.listId);
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

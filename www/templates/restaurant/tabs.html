@@ -1,6 +1,23 @@
 <!--
-	No tabs for this one
+	Tabs for this one
 -->
 
-<ion-nav-view name="restaurant-detail"></ion-nav-view>
+<ion-tabs class="tabs-striped-active-positive">
 
+  <ion-tab title="Info" href="#/restaurant/">
+    <ion-nav-view name="restaurant-detail"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Reviews" href="#/restaurant/{{restaurant.id}}/reviews">
+    <ion-nav-view name="restaurant-reviews"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Menu" href="#/restaurant/{{restaurant.id}}/menu">
+    <ion-nav-view name="restaurant-menu"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Locatie" href="#/restaurant/{{restaurant.id}}/location">
+    <ion-nav-view name="restaurant-location"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>
