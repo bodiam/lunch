@@ -63,20 +63,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
-
-
-  .state('tab.list-detail', {
-    url: '/list/:listId',
-    views: {
-      'tab-list': {
-        templateUrl: 'templates/list-detail.html',
-        controller: 'ListDetailCtrl'
-      }
-    }
-  })
-
-
   // Tab Items
   .state('tab-item.tab-item-detail', {
     url: '/:listId',
@@ -129,11 +115,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Restaurant pages
 
-  .state('restaurant.restaurant-detail', {
+  .state('restaurant.restaurant-info', {
     url: '/:listId',
     views: {
-      'restaurant-detail': {
-        templateUrl: 'templates/restaurant/detail.html',
+      'restaurant-info': {
+        templateUrl: 'templates/restaurant/info.html',
         controller: 'RestaurantCtrl'
       }
     }
