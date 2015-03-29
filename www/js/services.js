@@ -108,6 +108,102 @@ angular.module('starter.services', [])
     rating: '5.7'
   }, {
     id: 5,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 6,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 7,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 8,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 9,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 10,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 11,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 12,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 13,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 14,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 15,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 16,
+    name: 'Hotel Notting Hill',
+    location: 'Amsterdam',
+    address: 'Westeinde 26',
+    type: 'Brass',
+    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+    rating: '5.7'
+  }, {
+    id: 17,
     name: 'Westewind',
     location: 'Amsterdam',
     address: 'Utrechtsestraat 114',
