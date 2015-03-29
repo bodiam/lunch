@@ -56,6 +56,11 @@ angular.module('starter.services', [])
   var restaurants = [{
     id: 0,
     name: 'Grandcafe Lokaal',
+    description: 'Beleef Amsterdam in het donker!<br><br>Lokaal is de nieuwste indoor attractie van Amsterdam. ' +
+    'Hier zijn alle kenmerken die Amsterdam zo uniek maken nagebouwd. Bij Lokaal wandel je bijvoorbeeld door het ' +
+    'Vondelpark en voel je het gras onder je voeten. Fiets over de Amsterdamse grachten en hoor het drukke verkeer. ' +
+    'Loop langs het Red-Light district en ruik de verse vis op de Albert Cuyp markt.<br /><br /> In het donkder sta je ' +
+    'er natuurlijk noot alleen voor. Met begeleiding van blinde stadsgidsen ben je in goede handen tijds ',
     location: 'Amsterdam',
     address: 'Wibautstraat 85',
     type: 'Bbq/grill, Internationaal',
