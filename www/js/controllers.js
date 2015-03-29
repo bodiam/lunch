@@ -7,14 +7,14 @@ angular.module('starter.controllers', [])
   $scope.restaurants = Restaurants.all();
 
   $scope.clearSearch = function() {
-    // FIXME: remove $scope.restaurants.searchQuery = '';
+
 	$scope.restaurants.searchQuery = '';
-	// FIXME: something like this? $scope.searchSettings = '';
+
   };
 
   // Set up defaults for settings
   $scope.searchSettings = [];
-  $scope.searchSettings.cuisine = "French";
+  $scope.searchSettings.cuisine = "";
   
   $ionicModal.fromTemplateUrl('templates/modal-filter.html', {
       scope: $scope,
