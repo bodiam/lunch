@@ -63,12 +63,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  .state('tab.erik', {
-    url: '/list/:listId/menu',
+  .state('tab.restaurant', {
+    url: '/restaurant/:id/menu',
     views: {
       'tab-list': {
-        templateUrl: 'templates/menu.html',
-        controller: 'ListCtrl'
+        templateUrl: 'templates/restaurant/menu.html',
+        controller: 'RestaurantMenuCtrl'
       }
     }
   })
