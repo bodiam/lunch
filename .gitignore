@@ -7,4 +7,5 @@ plugins/
 hooks/
 resources
 .idea
+.metadata/
 
