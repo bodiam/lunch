@@ -134,6 +134,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('restaurant.restaurant-location', {
+    url: '/:listId/location',
+    views: {
+      'restaurant-location': {
+        templateUrl: 'templates/restaurant/location.html',
+        controller: 'RestaurantCtrl'
+      }
+    }
+  })
 
 
 
