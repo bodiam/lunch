@@ -1,13 +1,24 @@
-extern crate iron;
+#[macro_use] extern crate nickel;
+extern crate rustc_serialize as serialize;
 
-use iron::prelude::*;
-use iron::status;
+use nickel::Nickel;
+use nickel::HttpRouter;
+
+use serialize::json::ToJson;
+
+mod contact;
+use contact::Contact;
 
 fn main() {
-    fn hello_world(_: &mut Request) -> IronResult<Response> {
-        Ok(Response::with((status::Ok, "Hello World!")))
-    }
+    let mut server = Nickel::new();
 
-    Iron::new(hello_world).http("localhost:3000").unwrap();
-    println!("On 3000");
+    server.get("/", middleware!{
+        "Index"
+    });
+
+    server.get("/contacts/:id", middleware!{
+        Contact::new("Bodo", "i@bodokaiser.io").to_json()
+    });
+
+    server.listen("127.0.0.1:3000");
 }
