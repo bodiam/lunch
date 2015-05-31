@@ -3,21 +3,21 @@ use std::collections::BTreeMap;
 use serialize::json::Json;
 use serialize::json::ToJson;
 
-pub struct Contact {
+pub struct Reservation {
     name: String,
     email: String,
 }
 
-impl Contact {
-    pub fn new(name: &str, email: &str) -> Contact {
-        Contact{
+impl Reservation {
+    pub fn new(name: &str, email: &str) -> Reservation {
+        Reservation{
             name: name.to_string(),
             email: email.to_string(),
         }
     }
 }
 
-impl ToJson for Contact {
+impl ToJson for Reservation {
     fn to_json(&self) -> Json {
         let mut map = BTreeMap::new();
 
