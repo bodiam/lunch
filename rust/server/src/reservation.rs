@@ -1,11 +1,11 @@
 use std::collections::BTreeMap;
 
-use serialize::json::Json;
-use serialize::json::ToJson;
+use rustc_serialize::json::{Json, ToJson};
 
+#[derive(RustcDecodable, RustcEncodable)]
 pub struct Reservation {
-    name: String,
-    email: String,
+    pub name: String,
+    pub email: String,
 }
 
 impl Reservation {
