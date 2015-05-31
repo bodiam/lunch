@@ -4,38 +4,38 @@ import "fmt"
 
 var currentId int
 
-var todos Todos
+var restaurants Restaurants
 
 // Give us some seed data
 func init() {
-	RepoCreateTodo(Todo{Name: "Write presentation"})
-	RepoCreateTodo(Todo{Name: "Host meetup"})
+	RepoCreateTodo(Restaurant{Name: "Write presentation"})
+	RepoCreateTodo(Restaurant{Name: "Host meetup"})
 }
 
-func RepoFindTodo(id int) Todo {
-	for _, t := range todos {
+func RepoFindTodo(id int) Restaurant {
+	for _, t := range restaurants {
 		if t.Id == id {
 			return t
 		}
 	}
-	// return empty Todo if not found
-	return Todo{}
+	// return empty Restaurant if not found
+	return Restaurant{}
 }
 
 //this is bad, I don't think it passes race condtions
-func RepoCreateTodo(t Todo) Todo {
+func RepoCreateTodo(t Restaurant) Restaurant {
 	currentId += 1
 	t.Id = currentId
-	todos = append(todos, t)
+	restaurants = append(restaurants, t)
 	return t
 }
 
 func RepoDestroyTodo(id int) error {
-	for i, t := range todos {
+	for i, t := range restaurants {
 		if t.Id == id {
-			todos = append(todos[:i], todos[i+1:]...)
+			restaurants = append(restaurants[:i], restaurants[i+1:]...)
 			return nil
 		}
 	}
-	return fmt.Errorf("Could not find Todo with id of %d to delete", id)
+	return fmt.Errorf("Could not find Restaurant with id of %d to delete", id)
 }
