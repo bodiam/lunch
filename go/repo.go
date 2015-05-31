@@ -8,11 +8,11 @@ var restaurants Restaurants
 
 // Give us some seed data
 func init() {
-	RepoCreateTodo(Restaurant{Name: "Write presentation"})
-	RepoCreateTodo(Restaurant{Name: "Host meetup"})
+	RepoCreateRestaurant(Restaurant{Name: "Write presentation"})
+	RepoCreateRestaurant(Restaurant{Name: "Host meetup"})
 }
 
-func RepoFindTodo(id int) Restaurant {
+func RepoFindRestaurant(id int) Restaurant {
 	for _, t := range restaurants {
 		if t.Id == id {
 			return t
@@ -23,14 +23,14 @@ func RepoFindTodo(id int) Restaurant {
 }
 
 //this is bad, I don't think it passes race condtions
-func RepoCreateTodo(t Restaurant) Restaurant {
+func RepoCreateRestaurant(t Restaurant) Restaurant {
 	currentId += 1
 	t.Id = currentId
 	restaurants = append(restaurants, t)
 	return t
 }
 
-func RepoDestroyTodo(id int) error {
+func RepoDestroyRestaurant(id int) error {
 	for i, t := range restaurants {
 		if t.Id == id {
 			restaurants = append(restaurants[:i], restaurants[i+1:]...)
