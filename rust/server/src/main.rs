@@ -6,18 +6,18 @@ use nickel::HttpRouter;
 
 use serialize::json::ToJson;
 
-mod contact;
-use contact::Contact;
+mod reservation;
+use reservation::Reservation;
 
 fn main() {
     let mut server = Nickel::new();
 
     server.get("/", middleware!{
-        "Index"
+        "Hello!"
     });
 
-    server.get("/contacts/:id", middleware!{
-        Contact::new("Bodo", "i@bodokaiser.io").to_json()
+    server.get("/reservations/:id", middleware!{
+        Reservation::new("Bodo", "i@bodokaiser.io").to_json()
     });
 
     server.listen("127.0.0.1:3000");
