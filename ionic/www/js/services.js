@@ -49,216 +49,238 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('Restaurants', function() {
-  // Might use a resource here that returns a JSON array
+.factory('Restaurants', function($http) {
+  // Turn flag on to retrieve data from GO webservice
+  var useGoWS = false;
 
-  // Some fake testing data
-  var restaurants = [{
-    id: 0,
-    name: 'Grandcafe Lokaal',
-    description: 'Beleef Amsterdam in het donker!<br><br>Lokaal is de nieuwste indoor attractie van Amsterdam. ' +
-    'Hier zijn alle kenmerken die Amsterdam zo uniek maken nagebouwd. Bij Lokaal wandel je bijvoorbeeld door het ' +
-    'Vondelpark en voel je het gras onder je voeten. Fiets over de Amsterdamse grachten en hoor het drukke verkeer. ' +
-    'Loop langs het Red-Light district en ruik de verse vis op de Albert Cuyp markt.<br /><br /> In het donkder sta je ' +
-    'er natuurlijk noot alleen voor. Met begeleiding van blinde stadsgidsen ben je in goede handen tijds ',
-    location: 'Amsterdam',
-    address: 'Wibautstraat 85',
-    type: 'Bbq/grill, Internationaal',
-    cuisine: 'French',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg',
-    carousel: [
-        "http://www.couverts.nl/media/foto/550x310/3088/cbed57f1-330b-43f3-b1f8-9ae2b65586b9.jpg",
-        "http://www.couverts.nl/media/foto/550x310/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg",
-        "http://www.couverts.nl/media/foto/550x310/3088/50e2b29a-25bf-4789-9d0f-e7198acb4073.jpg",
-        "http://www.couverts.nl/media/foto/550x310/3088/94c9d1a5-cbbd-4993-b519-b02ac2cc3c7c.jpg",
-        "http://www.couverts.nl/media/foto/550x310/3088/ac913f2b-edd4-454b-8458-f750bd35c3b8.jpg",
-        "http://www.couverts.nl/media/foto/550x310/3088/13468cb4-b276-4f32-ad31-a337d1a9e915.jpg"
-    ],
-    rating: '6.8',
-    menu: {
-      pdfLink: "sdfsdfsdfs",
-      courses: [
-        {
-          name: "Voorgerechten",
-          items: [
-            {name: "Oosterse kip", price: 7.00},
-            {name: "Noorse zalm", price: 8.00},
-            {name: "Geitenkaas", price: 7.50}
-          ]
-        }, {
-          name: "Hoofdgerechten",
-          items: [
-            {name: "Kalfsentrecote", price: 13.00},
-            {name: "Tagliatelle", price: 11.50},
-            {name: "Vegetarische lasagna", price: 13.50}
-          ]
-        }, {
-          name: "Nagerechten",
-          items: [
-            {name: "Cheescake met vanille ijs", price: 6.00},
-            {name: "Chocoladetaart met vanille ijs", price: 6.00}
-          ]
-        }
-      ]
-    }
-  }, {
-    id: 1,
-    name: 'CtheCity',
-    description: 'Beleef Amsterdam in het donker!<br><br>CtheCity is de nieuwste indoor attractie van Amsterdam. ' +
-    'Hier zijn alle kenmerken die Amsterdam zo uniek maken nagebouwd. Bij CtheCity wandel je bijvoorbeeld door het ' +
-    'Vondelpark en voel je het gras onder je voeten. Fiets over de Amsterdamse grachten en hoor het drukke verkeer. ' +
-    'Loop langs het Red-Light district en ruik de verse vis op de Albert Cuyp markt.<br /><br /> In het donkder sta je ' +
-    'er natuurlijk noot alleen voor. Met begeleiding van blinde stadsgidsen ben je in goede handen tijds ',
-    location: 'Amsterdam',
-    address: 'Amsteldijk 55',
-    type: 'Hollands',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1988/030be71e-734c-49c5-a794-adc7ef7c3156.jpg',
-    rating: '7.5',
-    menu: {
-      pdfLink: "dsgfsdgsd",
-      courses: [
-        {
-          name: "Voorgerechten",
-          items: [
-            {name: "Oosterse kip", price: 7.00},
-            {name: "Noorse zalm", price: 8.00},
-            {name: "Geitenkaas", price: 7.50}
-          ]
-        }
-      ]
-    }
-  }, {
-    id: 2,
-    name: 'Ctaste, dineren in het donker',
-    location: 'Amsterdam',
-    address: 'Amsteldijk 55',
-    type: 'Internationaal',
-    cuisine: 'French',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/185/9763b0a8-c72c-436c-885a-2ff3a0ca16c9.jpg',
-    rating: '8.2'
-  }, {
-    id: 3,
-    name: 'Bistro Zuid',
-    location: 'Rotterdam ',
-    address: 'Van Woustraat 97',
-    type: 'Bistro',
-    cuisine: 'Italian',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1972/9aa061dc-c679-4483-a2a2-597065273b65.jpg',
-    rating: '4.3'
-  }, {
-    id: 4,
-    name: 'Hotel Notting Hill',
-    location: 'Eindhoven',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 5,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 6,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 7,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 8,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 9,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 10,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 11,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 12,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 13,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 14,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 15,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 16,
-    name: 'Hotel Notting Hill',
-    location: 'Amsterdam',
-    address: 'Westeinde 26',
-    type: 'Brass',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
-    rating: '5.7'
-  }, {
-    id: 17,
-    name: 'Westewind',
-    location: 'Amsterdam',
-    address: 'Utrechtsestraat 114',
-    type: 'Bistro / Europees / Frans',
-    thumbnail: 'http://couverts.nl/media/foto/280x280/3161/0299cad4-ad1b-4b6d-9055-9f402fc0fa03.jpg',
-    rating: '6.8'
-  }];
+  var restaurants = [];
+  if (useGoWS) {
 
+    $http.get('http://localhost:8080/restaurants')
+    .success(function(data, status, headers, config) {
+      console.log('Success', data);
+      
+      for (var i = 0; i < data.length; i++) {
+        restaurants[i] = data[i];
+      }
+    })
+    .error(function(data, status, headers, config) {
+      console.log(status);
+      console.log(data);
+      console.log(headers);
+      console.log(config);
+    });
+
+  } else {
+
+    // Some fake testing data
+    restaurants = [{
+      id: 0,
+      name: 'Grandcafe Lokaal',
+      description: 'Beleef Amsterdam in het donker!<br><br>Lokaal is de nieuwste indoor attractie van Amsterdam. ' +
+      'Hier zijn alle kenmerken die Amsterdam zo uniek maken nagebouwd. Bij Lokaal wandel je bijvoorbeeld door het ' +
+      'Vondelpark en voel je het gras onder je voeten. Fiets over de Amsterdamse grachten en hoor het drukke verkeer. ' +
+      'Loop langs het Red-Light district en ruik de verse vis op de Albert Cuyp markt.<br /><br /> In het donkder sta je ' +
+      'er natuurlijk noot alleen voor. Met begeleiding van blinde stadsgidsen ben je in goede handen tijds ',
+      location: 'Amsterdam',
+      address: 'Wibautstraat 85',
+      type: 'Bbq/grill, Internationaal',
+      cuisine: 'French',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg',
+      carousel: [
+          "http://www.couverts.nl/media/foto/550x310/3088/cbed57f1-330b-43f3-b1f8-9ae2b65586b9.jpg",
+          "http://www.couverts.nl/media/foto/550x310/3088/781da1b0-6948-4a1b-b792-c4dec370f34f.jpg",
+          "http://www.couverts.nl/media/foto/550x310/3088/50e2b29a-25bf-4789-9d0f-e7198acb4073.jpg",
+          "http://www.couverts.nl/media/foto/550x310/3088/94c9d1a5-cbbd-4993-b519-b02ac2cc3c7c.jpg",
+          "http://www.couverts.nl/media/foto/550x310/3088/ac913f2b-edd4-454b-8458-f750bd35c3b8.jpg",
+          "http://www.couverts.nl/media/foto/550x310/3088/13468cb4-b276-4f32-ad31-a337d1a9e915.jpg"
+      ],
+      rating: '6.8',
+      menu: {
+        pdfLink: "sdfsdfsdfs",
+        courses: [
+          {
+            name: "Voorgerechten",
+            items: [
+              {name: "Oosterse kip", price: 7.00},
+              {name: "Noorse zalm", price: 8.00},
+              {name: "Geitenkaas", price: 7.50}
+            ]
+          }, {
+            name: "Hoofdgerechten",
+            items: [
+              {name: "Kalfsentrecote", price: 13.00},
+              {name: "Tagliatelle", price: 11.50},
+              {name: "Vegetarische lasagna", price: 13.50}
+            ]
+          }, {
+            name: "Nagerechten",
+            items: [
+              {name: "Cheescake met vanille ijs", price: 6.00},
+              {name: "Chocoladetaart met vanille ijs", price: 6.00}
+            ]
+          }
+        ]
+      }
+    }, {
+      id: 1,
+      name: 'CtheCity',
+      description: 'Beleef Amsterdam in het donker!<br><br>CtheCity is de nieuwste indoor attractie van Amsterdam. ' +
+      'Hier zijn alle kenmerken die Amsterdam zo uniek maken nagebouwd. Bij CtheCity wandel je bijvoorbeeld door het ' +
+      'Vondelpark en voel je het gras onder je voeten. Fiets over de Amsterdamse grachten en hoor het drukke verkeer. ' +
+      'Loop langs het Red-Light district en ruik de verse vis op de Albert Cuyp markt.<br /><br /> In het donkder sta je ' +
+      'er natuurlijk noot alleen voor. Met begeleiding van blinde stadsgidsen ben je in goede handen tijds ',
+      location: 'Amsterdam',
+      address: 'Amsteldijk 55',
+      type: 'Hollands',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1988/030be71e-734c-49c5-a794-adc7ef7c3156.jpg',
+      rating: '7.5',
+      menu: {
+        pdfLink: "dsgfsdgsd",
+        courses: [
+          {
+            name: "Voorgerechten",
+            items: [
+              {name: "Oosterse kip", price: 7.00},
+              {name: "Noorse zalm", price: 8.00},
+              {name: "Geitenkaas", price: 7.50}
+            ]
+          }
+        ]
+      }
+    }, {
+      id: 2,
+      name: 'Ctaste, dineren in het donker',
+      location: 'Amsterdam',
+      address: 'Amsteldijk 55',
+      type: 'Internationaal',
+      cuisine: 'French',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/185/9763b0a8-c72c-436c-885a-2ff3a0ca16c9.jpg',
+      rating: '8.2'
+    }, {
+      id: 3,
+      name: 'Bistro Zuid',
+      location: 'Rotterdam ',
+      address: 'Van Woustraat 97',
+      type: 'Bistro',
+      cuisine: 'Italian',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1972/9aa061dc-c679-4483-a2a2-597065273b65.jpg',
+      rating: '4.3'
+    }, {
+      id: 4,
+      name: 'Hotel Notting Hill',
+      location: 'Eindhoven',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 5,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 6,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 7,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 8,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 9,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 10,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 11,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 12,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 13,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 14,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 15,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 16,
+      name: 'Hotel Notting Hill',
+      location: 'Amsterdam',
+      address: 'Westeinde 26',
+      type: 'Brass',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/1843/fee8a8bd-daeb-43ca-852d-60c65368a767.jpg',
+      rating: '5.7'
+    }, {
+      id: 17,
+      name: 'Westewind',
+      location: 'Amsterdam',
+      address: 'Utrechtsestraat 114',
+      type: 'Bistro / Europees / Frans',
+      thumbnail: 'http://couverts.nl/media/foto/280x280/3161/0299cad4-ad1b-4b6d-9055-9f402fc0fa03.jpg',
+      rating: '6.8'
+    }];
+  }
+  
   return {
     all: function() {
       return restaurants;
@@ -283,7 +305,6 @@ angular.module('starter.services', [])
 .factory('Friends', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
   // Some fake testing data
   var friends = [{
     id: 0,
